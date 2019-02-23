@@ -6,6 +6,7 @@ var follow = require("./api/follow");
 var verify = require("./api/verify");
 
 var info;
+
 verify.verify();
 function speak() {
   news.news().then(result => {

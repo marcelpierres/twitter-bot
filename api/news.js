@@ -26,7 +26,7 @@ var info = [null, null];
 async function news() {
   try {
     let val = await newsapi.v2.everything({
-      q: "samsung",
+      q: "technology, android",
       language: "en"
     });
     info = newsparser.newsparser(val);
