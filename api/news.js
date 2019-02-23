@@ -31,7 +31,9 @@ async function news() {
     });
     info = newsparser.newsparser(val);
     return info;
-  } catch (e) {}
+  } catch (e) {
+    console.log("error");
+  }
 }
 
 module.exports.news = news;

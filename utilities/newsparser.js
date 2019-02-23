@@ -1,7 +1,9 @@
 var Promise = require("promise");
+var randnum = require("../utilities/randnum");
 module.exports.newsparser = function(data) {
-  var title = data.articles[0].title;
-  var url = data.articles[0].url;
+  var i = randnum.randnum(data.articles);
+  var title = data.articles[i].title;
+  var url = data.articles[i].url;
   var info = [title, url];
   return info;
 };

@@ -4,7 +4,6 @@ var config = require("../config"); //import keys
 var Promise = require("promise");
 var T = new Twit(config); //Create a new Twit object that allows us to call functions
 
-verify();
 async function verify() {
   var params = {
     include_entities: false,
@@ -21,3 +20,5 @@ function onAuthenticated(err, res) {
 
   console.log("Authentication successful. Running bot...\r\n");
 }
+
+module.exports.verify = verify;

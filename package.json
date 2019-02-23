@@ -18,8 +18,10 @@
   },
   "homepage": "https://gitlab.com/marcelpierres/twitter-bot",
   "dependencies": {
+    "chance": "^1.0.18",
     "newsapi": "^2.4.0",
     "promise": "^8.0.2",
     "twit": "^2.2.11"
-  }
+  },
+  "devDependencies": {}
 }

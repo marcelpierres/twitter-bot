@@ -22,6 +22,7 @@
 - `npm install twit --save` (https://github.com/ttezel/twit#twit)
 - `npm install --save promise` (https://www.npmjs.com/package/promise)
 - `npm install --save newsapi` (https://newsapi.org/docs/client-libraries/node-js)
+- `npm install --save change` (https://www.npmjs.com/package/chance)
 
 ## Keys-And-Tokens
 
