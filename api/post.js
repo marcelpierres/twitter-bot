@@ -8,7 +8,7 @@ async function post(info) {
   var params = {
     status: info
   }; // this is the param variable which will have key and value
-  console.log(info[1]);
+  // console.log(info[1]);
   // posts the tweet
   await T.post("statuses/update", params, tweeted);
 }

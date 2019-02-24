@@ -2,10 +2,10 @@
 var Twit = require("twit");
 var config = require("../config"); //import keys
 var Promise = require("promise");
+var randnum = require("../utilities/randnum");
 var T = new Twit(config); //Create a new Twit object that allows us to call functions
 
-search();
-async function search() {
+async function like() {
   var params = {
     q: "#tech, #science",
     result_type: "recent",
@@ -16,6 +16,17 @@ async function search() {
   var a = await T.get("search/tweets", params, searchedData);
   console.log(a);
 }
-function searchedData(err, data, response) {
-  console.log(data);
+async function searchedData(err, data, response) {
+  var i = randnum.randnum(data.statuses);
+  var tweet_id = data.statuses[i].id_str;
+  await T.get("favorites/create", { id: tweet_id }, onLike);
+}
+function onLike(err, response) {
+  if (response) {
+    console.log("Retweeted!!!");
+  }
+  // if there was an error while tweeting
+  if (err) {
+    console.log("Error");
+  }
 }

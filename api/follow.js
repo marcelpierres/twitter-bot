@@ -2,6 +2,7 @@
 var Twit = require("twit");
 var config = require("../config"); //import keys
 var Promise = require("promise");
+var post = require("./post");
 
 var T = new Twit(config); //Create a new Twit object that allows us to call functions
 
@@ -16,13 +17,16 @@ async function follow() {
   stream.on("follow", onFollowed);
   stream.on("error", onError);
 }
-function onFollowed(event) {
+function onFollowed(eventMsg) {
   console.log("Follow event");
   var name = eventMsg.source.name;
   var screenName = eventMsg.source.screen_name;
-  tweetMessage("@" + screenName + "Thank you for following me " + name);
+  var tweet = "@" + screenName + "Thank you for following me " + name;
+  post.post(tweet);
 }
 
 function onError(event) {
   console.log("Fail");
 }
+
+module.exports.follow = follow;
